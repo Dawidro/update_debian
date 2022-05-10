@@ -1,0 +1,12 @@
+---
+- name: disable upgrade of kernel
+  tags: always
+  dpkg_selections: 
+    name: linux-image-amd64
+
+- name: update debian repository without kernel
+  tags: always
+  apt:
+    update_cache: yes
+    name: "*"
+    state: latest

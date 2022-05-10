@@ -1,0 +1,25 @@
+# Standards: 0.1
+---
+galaxy_info:
+  author: Dawid Olesinski
+  description: Updating Debian cache
+  role_name: Debian Update
+  company: none
+  license: MIT
+  min_ansible_version: 2.7
+  platforms:
+    - name: Ubuntu
+      versions:
+        - disco
+        - bionic
+        - xenial
+    - name: Debian
+      versions:
+        - stretch
+        - buster
+        - bullseye
+  galaxy_tags:
+    -update
+
+dependencies: []
+
