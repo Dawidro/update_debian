@@ -11,15 +11,15 @@
     filename: kubernates
     update_cache: yes
 
-- name: disable upgrade of kernel
-  tags: always
-  dpkg_selections:
-    name: linux-image-amd64
+#- name: disable upgrade of kernel
+#  tags: always
+#  dpkg_selections:
+#    name: linux-image-amd64
 
-- name: disable upgrade of glibc
-  tags: always
-  dpkg_selections:
-    name: glibc
+#- name: disable upgrade of glibc
+#  tags: always
+#  dpkg_selections:
+#    name: glibc
 
 - name: update debian repository without kernel and glibc
   tags: always
