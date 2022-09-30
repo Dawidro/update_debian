@@ -1,22 +1,27 @@
 ---
 - name: add Kubernates apt-key
-  apt_key: 
-    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg 
-    state: present 
+  apt_key:
+    url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
+    state: present
 
 - name: add Kubernates repository apt repository
-  apt_repository: 
-    repo: deb https://apt.kubernetes.io/ kubernetes-xenial main 
-    state: present 
+  apt_repository:
+    repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
+    state: present
     filename: kubernates
     update_cache: yes
 
 - name: disable upgrade of kernel
   tags: always
-  dpkg_selections: 
+  dpkg_selections:
     name: linux-image-amd64
 
-- name: update debian repository without kernel
+- name: disable upgrade of glibc
+  tags: always
+  dpkg_selections:
+    name: glibc
+
+- name: update debian repository without kernel and glibc
   tags: always
   apt:
     update_cache: yes
