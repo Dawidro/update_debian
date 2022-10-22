@@ -15,11 +15,13 @@
   tags: always
   dpkg_selections:
     name: linux-image-amd64
+    selection: hold
 
 - name: disable upgrade of glibc
   tags: always
   dpkg_selections:
-    name: libc6-amd64
+    name: libc6
+    selection: hold
 
 - name: update debian repository without kernel and glibc
   tags: always
