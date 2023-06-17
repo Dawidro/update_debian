@@ -1,17 +1,16 @@
 ---
-- name: add Kubernates apt-key
+- name: Add Kubernates apt-key
   apt_key:
     url: https://packages.cloud.google.com/apt/doc/apt-key.gpg
     state: present
 
-- name: add Kubernates repository apt repository
+- name: Add Kubernates repository apt repository
   apt_repository:
     repo: deb https://apt.kubernetes.io/ kubernetes-xenial main
     state: present
     filename: kubernates
-    update_cache: yes
 
-- name: disable upgrade of packages that require reboot
+- name: Disable upgrade of packages that require reboot
   tags: always
   dpkg_selections:
     name: "{{ item }}"
@@ -26,7 +25,7 @@
     - gnutls
     - openssl-libs
 
-- name: update debian repository
+- name: Update system
   tags: always
   apt:
     update_cache: yes
