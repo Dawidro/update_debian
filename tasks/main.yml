@@ -32,12 +32,9 @@
   loop:
     - linux-image-amd64
     - libc6
-    - linux-firmware
     - dbus
     - systemd
     - udev
-    - gnutls
-    - openssl-libs
 
 - name: Update system
   tags: always
