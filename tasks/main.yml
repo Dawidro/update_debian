@@ -25,18 +25,6 @@
     repo: "https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /"
     state: present
 
-- name: Disable upgrade of packages that require reboot
-  tags: always
-  dpkg_selections:
-    name: "{{ item }}"
-    selection: hold
-  loop:
-    - kernel-image
-    - libc6
-    - dbus
-    - systemd
-    - udev
-
 - name: Update system
   tags: always
   apt:
