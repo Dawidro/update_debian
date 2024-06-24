@@ -22,7 +22,7 @@
 
 - name: Add Kubernetes apt repository.
   ansible.builtin.apt_repository:
-    repo: "deb https://pkg.jenkins.io/debian-stable binary/"
+    repo: "https://pkgs.k8s.io/core:/stable:/v1.29/deb/ /"
     state: present
 
 - name: Disable upgrade of packages that require reboot
